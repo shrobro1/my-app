@@ -1,5 +1,5 @@
 import ButtonLogin from "@/components/ButtonLogin";
-
+import FAQListItem from "@/components/FAQListItem";
 export default function Home() {
   const isLoggedIn = true;
   const name = "Shriji";
@@ -11,8 +11,12 @@ export default function Home() {
         <div className="flex space-x-3 justify-between items-center px-8 py-2 max-w-3xl mx-auto">
           <div className="font-black uppercase">Shrobro.IO</div>
           <div className="space-x-4 max-md:hidden">
-            <a className="link link-primary">Pricing</a>
-            <a className="link link-primary">FAQ</a>
+            <a className="link link-primary" href="#pricing">
+              Pricing
+            </a>
+            <a className="link link-primary" href="#FAQ">
+              FAQ
+            </a>
           </div>
           <div>
             <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
@@ -32,7 +36,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="bg-base-200">
+      <section className="bg-base-200" id="pricing">
         <div className=" py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary">
             Pricing
@@ -51,60 +55,59 @@ export default function Home() {
               </div>
             </div>
             <ul className="space-y-2">
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="text-primary size-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Collect customer feedback
-              </li>
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="text-primary size-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Admin dashboard
-              </li>
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="text-primary size-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                24/7 support
-              </li>
+              {[
+                "Collect customer feedback",
+                "Unlimited Dashboards",
+                "Admin Dashboard",
+                "24/7 Support",
+                "Shriji Personal Support",
+              ].map((priceItem) => (
+                <li className="flex gap-2 items-center" key={priceItem}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="text-primary size-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m4.5 12.75 6 6 9-13.5"
+                    />
+                  </svg>
+                  {priceItem}
+                </li>
+              ))}
             </ul>
-            <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+            <ButtonLogin
+              isLoggedIn={isLoggedIn}
+              name={name}
+              extraStyle="w-full"
+            />
           </div>
+        </div>
+      </section>
+      {/* FAQ */}
+      <section className="bg-base-100" id="FAQ">
+        <div className=" py-32 px-8 max-w-3xl mx-auto">
+          <p className="text-sm uppercase font-medium text-center text-primary">
+            FAQ
+          </p>
+          <h2 className=" text-center text-3xl lg:text-4xl font-extrabold mb-1">
+            Frequently Asked Questions
+          </h2>
+
+          <ul className="max-w-lg mx-auto">
+            {[
+              { question: "What do I get exactly?", answer: "Lorem Ipsum" },
+              { question: "Can I get a refund?", answer: "Lorem Ipsum" },
+              { question: "I have another question", answer: "Lorem Ipsum" },
+            ].map((qa) => (
+              <FAQListItem key={qa.question} qa={qa} />
+            ))}
+          </ul>
         </div>
       </section>
     </main>
