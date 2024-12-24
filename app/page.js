@@ -1,5 +1,8 @@
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
+import Image from "next/image";
+import productDemo from "/Users/shrijithakker/my-app/app/productDemo.jpeg";
+
 export default function Home() {
   const isLoggedIn = true;
   const name = "Shriji";
@@ -8,7 +11,7 @@ export default function Home() {
     <main>
       {/* Header Section */}
       <section className="bg-base-200">
-        <div className="flex space-x-3 justify-between items-center px-8 py-2 max-w-3xl mx-auto">
+        <div className="flex space-x-3 justify-between items-center px-8 py-2 max-w-5xl mx-auto">
           <div className="font-black uppercase">Shrobro.IO</div>
           <div className="space-x-4 max-md:hidden">
             <a className="link link-primary" href="#pricing">
@@ -24,15 +27,22 @@ export default function Home() {
         </div>
       </section>
       {/* Hero Section */}
-      <section className=" py-32 px-8 text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
-          Collect customer feedback to build better products.
-        </h1>
-        <div className=" opacity-90 mb-10">
-          Create a feedback board in minutes, prioritize features, and build
-          products your customer will love.
+      <section className=" py-32 px-8 text-center lg:text-left max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start">
+        <Image
+          src={productDemo}
+          alt="productDemo"
+          className="w-96 rounded-xl"
+        />
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
+            Collect customer feedback to build better products.
+          </h1>
+          <div className=" opacity-90 mb-10">
+            Create a feedback board in minutes, prioritize features, and build
+            products your customer will love.
+          </div>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
         </div>
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
       </section>
 
       {/* Pricing Section */}
