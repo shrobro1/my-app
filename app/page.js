@@ -1,7 +1,7 @@
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
-import productDemo from "/Users/shrijithakker/my-app/app/productDemo.jpeg";
+import productDemo from "/Users/shrijithakker/my-app/public/productDemo.jpeg";
 
 export default function Home() {
   const isLoggedIn = true;
