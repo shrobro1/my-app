@@ -4,7 +4,7 @@ import Image from "next/image";
 import productDemo from "@/app/productDemo.jpeg";
 
 export default function Home() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const name = "Shriji";
 
   return (
@@ -12,13 +12,13 @@ export default function Home() {
       {/* Header Section */}
       <section className="bg-base-200">
         <div className="flex space-x-3 justify-between items-center px-8 py-2 max-w-5xl mx-auto">
-          <div className="font-black uppercase">Shrobro.IO</div>
+          <div className="font-black ">shrijithakker.com</div>
           <div className="space-x-4 max-md:hidden">
             <a className="link link-primary" href="#pricing">
-              Pricing
+              Projects
             </a>
             <a className="link link-primary" href="#FAQ">
-              FAQ
+              Contact
             </a>
           </div>
           <div>
@@ -35,11 +35,11 @@ export default function Home() {
         />
         <div>
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
-            Collect customer feedback to build better products.
+            Welcome to my website. Check out my projects. Reach out to
+            collaborate.
           </h1>
-          <div className=" opacity-90 mb-10">
-            Create a feedback board in minutes, prioritize features, and build
-            products your customer will love.
+          <div className=" opacity-90 mb-8">
+            I can help you launch a website just like this one.
           </div>
           <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
         </div>
@@ -49,53 +49,87 @@ export default function Home() {
       <section className="bg-base-200" id="pricing">
         <div className=" py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary">
-            Pricing
+            Projects
           </p>
           <h2 className=" text-center text-3xl lg:text-4xl font-extrabold mb-1">
-            One price for everyone.
+            Seeing ideas through.
           </h2>
           <div className="text-center opacity-90 mb-12">
-            Pay once, unlimited access forever.
+            Got an idea for a software product? Lets make it happen.
           </div>
-          <div className="p-8 bg-base-100 max-w-full sm:w-96 rounded-3xl mx-auto space-y-6">
-            <div className="flex gap-2 items-baseline">
-              <div className="text-4xl font-black">$50</div>
-              <div className="uppercase text-sm font-medium opacity-60">
-                /MONTH
+          <div className="flex mx-auto max-w-full gap-x-6">
+            {/* card one */}
+            <div className="p-8 bg-base-100 max-w-full sm:w-96 rounded-3xl mx-auto space-y-6">
+              <div className="flex gap-2 items-baseline">
+                <div className="text-4xl font-black">Jobinhood.co</div>
               </div>
+              <ul className="space-y-2">
+                {[
+                  "AI Resume assistance",
+                  "Tailor your resume to a job posting",
+                  "Application tracking",
+                ].map((priceItem) => (
+                  <li className="flex gap-2 items-center" key={priceItem}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="text-primary size-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {priceItem}
+                  </li>
+                ))}
+              </ul>
+              <ButtonLogin
+                isLoggedIn={isLoggedIn}
+                name={name}
+                extraStyle="w-full"
+              />
             </div>
-            <ul className="space-y-2">
-              {[
-                "Collect customer feedback",
-                "Unlimited Dashboards",
-                "Admin Dashboard",
-                "24/7 Support",
-                "Shriji Personal Support",
-              ].map((priceItem) => (
-                <li className="flex gap-2 items-center" key={priceItem}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="text-primary size-4"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                  {priceItem}
-                </li>
-              ))}
-            </ul>
-            <ButtonLogin
-              isLoggedIn={isLoggedIn}
-              name={name}
-              extraStyle="w-full"
-            />
+            {/* card 2 */}
+            <div className="p-8 bg-base-100 max-w-full sm:w-96 rounded-3xl mx-auto space-y-6">
+              <div className="flex gap-2 items-baseline">
+                <div className="text-4xl font-black">Flashcards</div>
+              </div>
+              <ul className="space-y-2">
+                {[
+                  "Create and share flashcard decks.",
+                  "Unlimited decks.",
+                  "Track learning progress.",
+                ].map((priceItem) => (
+                  <li className="flex gap-2 items-center" key={priceItem}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="text-primary size-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {priceItem}
+                  </li>
+                ))}
+              </ul>
+              <ButtonLogin
+                isLoggedIn={isLoggedIn}
+                name={name}
+                extraStyle="w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -106,12 +140,12 @@ export default function Home() {
             FAQ
           </p>
           <h2 className=" text-center text-3xl lg:text-4xl font-extrabold mb-1">
-            Frequently Asked Questions
+            Contact Info
           </h2>
 
           <ul className="max-w-lg mx-auto">
             {[
-              { question: "What do I get exactly?", answer: "Lorem Ipsum" },
+              { question: "Schedule a consultation", answer: "Lorem Ipsum" },
               { question: "Can I get a refund?", answer: "Lorem Ipsum" },
               { question: "I have another question", answer: "Lorem Ipsum" },
             ].map((qa) => (
