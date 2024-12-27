@@ -52,12 +52,12 @@ export default function Home() {
             Pricing
           </p>
           <h2 className=" text-center text-3xl lg:text-4xl font-extrabold mb-1">
-            One price: $49.99
+            One price for everyone.
           </h2>
           <div className="text-center opacity-90 mb-12">
             Pay once, unlimited access forever.
           </div>
-          <div className="p-8 bg-base-100 w-96 rounded-3xl mx-auto space-y-6">
+          <div className="p-8 bg-base-100 max-w-full sm:w-96 rounded-3xl mx-auto space-y-6">
             <div className="flex gap-2 items-baseline">
               <div className="text-4xl font-black">$50</div>
               <div className="uppercase text-sm font-medium opacity-60">

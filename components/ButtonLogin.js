@@ -13,5 +13,8 @@ const ButtonLogin = ({ isLoggedIn, name, extraStyle }) => {
   }
   return <button>Login</button>;
   // if logged in, welcome back. if else, login button. but login button does not have an href to a log in page
+  // create a /login page
+  // create a email and password form
+  // make post request to api/auth
 };
 export default ButtonLogin;
