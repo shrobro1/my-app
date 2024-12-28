@@ -2,6 +2,8 @@ import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import productDemo from "@/app/productDemo.jpeg";
+import icon from "@/app/icon.png";
+import Link from "next/link";
 
 export default function Home() {
   const isLoggedIn = false;
@@ -11,7 +13,7 @@ export default function Home() {
     <main>
       {/* Header Section */}
       <section className="bg-base-200">
-        <div className="flex space-x-3 justify-between items-center px-8 py-2 max-w-5xl mx-auto">
+        <div className="flex space-x-3 justify-between items-center px-8 py-2 max-w-6xl mx-auto">
           <div className="font-black ">shrijithakker.com</div>
           <div className="space-x-4 max-md:hidden">
             <a className="link link-primary" href="#pricing">
@@ -27,7 +29,7 @@ export default function Home() {
         </div>
       </section>
       {/* Hero Section */}
-      <section className=" py-32 px-8 text-center lg:text-left max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start">
+      <section className=" py-32 px-8 text-center lg:text-left max-w-6xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start">
         <Image
           src={productDemo}
           alt="productDemo"
@@ -47,7 +49,7 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section className="bg-base-200" id="pricing">
-        <div className=" py-32 px-8 max-w-3xl mx-auto">
+        <div className=" py-32 px-8 max-w-6xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary">
             Projects
           </p>
@@ -57,78 +59,61 @@ export default function Home() {
           <div className="text-center opacity-90 mb-12">
             Got an idea for a software product? Lets make it happen.
           </div>
-          <div className="flex mx-auto max-w-full gap-x-6">
+          <div className="flex flex-col lg:flex-row mx-auto max-w-full gap-x-6 gap-y-4">
             {/* card one */}
-            <div className="p-8 bg-base-100 max-w-full sm:w-96 rounded-3xl mx-auto space-y-6">
-              <div className="flex gap-2 items-baseline">
-                <div className="text-4xl font-black">Jobinhood.co</div>
+            <div className="card bg-base-100 image-full w-full lg:w-96 shadow-xl">
+              <figure>
+                <Image src={icon} alt="Shoes" layout="fill" objectFit="cover" />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Jobinhood.co</h2>
+                <p>
+                  Tailor your resume to a specific job posting before applying!
+                </p>
+                <div className="card-actions justify-start">
+                  <a
+                    href="https://jobinhood.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    Visit
+                  </a>
+                </div>
               </div>
-              <ul className="space-y-2">
-                {[
-                  "AI Resume assistance",
-                  "Tailor your resume to a job posting",
-                  "Application tracking",
-                ].map((priceItem) => (
-                  <li className="flex gap-2 items-center" key={priceItem}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="text-primary size-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m4.5 12.75 6 6 9-13.5"
-                      />
-                    </svg>
-                    {priceItem}
-                  </li>
-                ))}
-              </ul>
-              <ButtonLogin
-                isLoggedIn={isLoggedIn}
-                name={name}
-                extraStyle="w-full"
-              />
             </div>
             {/* card 2 */}
-            <div className="p-8 bg-base-100 max-w-full sm:w-96 rounded-3xl mx-auto space-y-6">
-              <div className="flex gap-2 items-baseline">
-                <div className="text-4xl font-black">Flashcards</div>
+            <div className="card bg-base-100 image-full w-full lg:w-96 shadow-xl">
+              <figure>
+                <Image src={icon} alt="Shoes" layout="fill" objectFit="cover" />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Flashcards</h2>
+                <p>
+                  Create unlimited flashcard decks and share with your
+                  classmates.
+                </p>
+                <div className="card-actions justify-start">
+                  <Link href="/flashcard">
+                    <button className="btn btn-primary">Visit</button>
+                  </Link>
+                </div>
               </div>
-              <ul className="space-y-2">
-                {[
-                  "Create and share flashcard decks.",
-                  "Unlimited decks.",
-                  "Track learning progress.",
-                ].map((priceItem) => (
-                  <li className="flex gap-2 items-center" key={priceItem}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="text-primary size-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m4.5 12.75 6 6 9-13.5"
-                      />
-                    </svg>
-                    {priceItem}
-                  </li>
-                ))}
-              </ul>
-              <ButtonLogin
-                isLoggedIn={isLoggedIn}
-                name={name}
-                extraStyle="w-full"
-              />
+            </div>
+            {/* card 3 */}
+            <div className="card bg-base-100 image-full w-full lg:w-96 shadow-xl">
+              <figure>
+                <Image src={icon} alt="Shoes" layout="fill" objectFit="cover" />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Future Projects</h2>
+                <p>Reach out to collaborate on future projects.</p>
+                <div className="card-actions justify-start">
+                  <Link href="/flashcard">
+                    <button className="btn btn-primary">Visit</button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
