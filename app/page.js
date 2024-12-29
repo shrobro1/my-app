@@ -16,7 +16,7 @@ export default function Home() {
         <div className="flex space-x-3 justify-between items-center px-8 py-2 max-w-6xl mx-auto">
           <div className="font-black ">shrijithakker.com</div>
           <div className="space-x-4 max-md:hidden">
-            <a className="link link-primary" href="#pricing">
+            <a className="link link-primary" href="#projects">
               Projects
             </a>
             <a className="link link-primary" href="#FAQ">
@@ -47,8 +47,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="bg-base-200" id="pricing">
+      {/* projects Section */}
+      <section className="bg-base-200" id="projects">
         <div className=" py-32 px-8 max-w-6xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary">
             Projects
