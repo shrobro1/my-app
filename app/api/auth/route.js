@@ -8,5 +8,5 @@ export function POST() {
   // 3. query the database to see if user exists
   // 4a. if user exists, create a session
   // 4b. if not, create a new users and a session
-  // 5. Return a session tok/*
+  // 5. Return a session token/*
 }
