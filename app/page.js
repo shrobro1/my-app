@@ -3,7 +3,6 @@ import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import productDemo from "@/app/productDemo.jpeg";
 import icon from "@/app/icon.png";
-import Link from "next/link";
 
 export default function Home() {
   const isLoggedIn = false;
@@ -41,7 +40,7 @@ export default function Home() {
             collaborate.
           </h1>
           <div className=" opacity-90 mb-8">
-            I can help you launch a website just like this one.
+            I can help you build a website just like this one.
           </div>
           <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
         </div>
@@ -60,10 +59,15 @@ export default function Home() {
             Got an idea for a software product? Lets make it happen.
           </div>
           <div className="flex flex-col lg:flex-row mx-auto max-w-full gap-x-6 gap-y-4">
-            {/* card one */}
+            {/* card one Jobinhood */}
             <div className="card bg-base-100 image-full w-full lg:w-96 shadow-xl">
               <figure>
-                <Image src={icon} alt="Shoes" layout="fill" objectFit="cover" />
+                <Image
+                  src={icon}
+                  alt="Jobinhood"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">Jobinhood.co</h2>
@@ -85,33 +89,57 @@ export default function Home() {
             {/* card 2 */}
             <div className="card bg-base-100 image-full w-full lg:w-96 shadow-xl">
               <figure>
-                <Image src={icon} alt="Shoes" layout="fill" objectFit="cover" />
+                <Image
+                  src={icon}
+                  alt="Jobinhood"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </figure>
               <div className="card-body">
-                <h2 className="card-title">Flashcards</h2>
+                <h2 className="card-title">Blockle.io</h2>
                 <p>
-                  Create unlimited flashcard decks and share with your
-                  classmates.
+                  Move the red block through the puzzle in this daily puzzle
+                  game!
                 </p>
                 <div className="card-actions justify-start">
-                  <Link href="/flashcard">
-                    <button className="btn btn-primary">Visit</button>
-                  </Link>
+                  <a
+                    href="https://blockle.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    Visit
+                  </a>
                 </div>
               </div>
             </div>
+
             {/* card 3 */}
             <div className="card bg-base-100 image-full w-full lg:w-96 shadow-xl">
               <figure>
-                <Image src={icon} alt="Shoes" layout="fill" objectFit="cover" />
+                <Image
+                  src={icon}
+                  alt="Jobinhood"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </figure>
               <div className="card-body">
-                <h2 className="card-title">Future Projects</h2>
-                <p>Reach out to collaborate on future projects.</p>
+                <h2 className="card-title">Unquote.io</h2>
+                <p>
+                  Surf through hundreds of quotes to find your next read, or
+                  post your favorite quotes for users to discover!
+                </p>
                 <div className="card-actions justify-start">
-                  <Link href="/flashcard">
-                    <button className="btn btn-primary">Visit</button>
-                  </Link>
+                  <a
+                    href="https://unquote.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    Visit
+                  </a>
                 </div>
               </div>
             </div>
