@@ -16,7 +16,7 @@ const ButtonLogin = ({ isLoggedIn, name, extraStyle }) => {
       href="/dashboard"
       className={`btn btn-primary ${extraStyle ? extraStyle : ""}`}
     >
-      Get started
+      Reach Out
     </button>
   );
   // if logged in, welcome back. if else, login button. but login button does not have an href to a log in page
